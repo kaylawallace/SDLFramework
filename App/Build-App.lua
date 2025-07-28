@@ -12,7 +12,8 @@ project "App"
       "Source",
 
 	  -- Include Core
-	  "../Core/Source"
+	  "../Core/Source",
+      "../Vendor/SDL3/include"
    }
 
    links
