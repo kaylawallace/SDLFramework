@@ -5,18 +5,25 @@ project "Vendor"
    targetdir "Binaries/%{cfg.buildcfg}"
    staticruntime "off"
 
-   files { "Vendor/**.h", "Vendor/**.cpp" }
+   files { "Source/**.h", "Source/**.cpp" }
 
-   includedirs
-   {
-      "Vendor",
-      "Vendor/SDL3/include",
-      "Vendor/SDL3/VisualC/SDL"
+   includedirs {
+      "Source"
    }
+   
+ --     syslibdirs {
+ --      "Source/SDL3"
+ --     }
 
    libdirs {
-    "Vendor/SDL3"
+    "Binaries/SDL/x64"
    }
+
+   links {
+    "SDL3"
+   }
+
+--inheritdependencies "Binaries/SDL/x64"
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
    objdir ("../Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")

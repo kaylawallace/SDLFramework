@@ -7,18 +7,15 @@ project "App"
 
    files { "Source/**.h", "Source/**.cpp" }
 
-   includedirs
-   {
+   includedirs {
       "Source",
-
-	  -- Include Core
-	  "../Core/Source",
-      "../Vendor/SDL3/include"
+      "../Core/Source",
+      "../Vendor/Source"
    }
 
-   links
-   {
-      "Core"
+   links {
+      "Core",
+      "Vendor"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

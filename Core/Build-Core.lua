@@ -7,10 +7,8 @@ project "Core"
 
    files { "Source/**.h", "Source/**.cpp" }
 
-   includedirs
-   {
-      "Source",
-      "../Vendor"
+   includedirs {
+      "Source"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
